@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Footer from './footer/Footer.js';
 // This one import will make Tailwind’s utility classes available to the entire app,
 // no need to import it again elsewhere.
 import "./tailwind.output.css";
@@ -22,6 +23,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Footer />
     </div>
   );
 }
