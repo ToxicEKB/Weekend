@@ -22,10 +22,7 @@ code {
 }
 
 .container {
-  /*
-  min-width: 480px; */
   width: 400px;
-
   margin: 0 auto;
   padding: 70px 20px;
   border: 1px solid gray;
