@@ -13,17 +13,5 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font: 300 14px/1.8 'Raleway', Times New Roman, Times, sans-serif;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.container {
-  width: 400px;
-  margin: 0 auto;
-  padding: 70px 20px;
-  border: 1px solid gray;
+  font: 400 14px/1.8 'Raleway', Times New Roman, Times, sans-serif;
 }
