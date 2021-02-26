@@ -1,4 +1,4 @@
-import "../tailwind.output.css";
+import "../../tailwind.output.css";
 import "./Footer.css";
 import Vector from "./footerImg/Vector.svg";
 import Vector_1 from "./footerImg/Vector_1.svg";
