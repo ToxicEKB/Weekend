@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import ShowTags from "./ShowTags";
 
-const BlockItem = (props) => {
+const TagBlock = (props) => {
   const [visibleTags, setVisibleTags] = useState(false);
 
   const toggleVisibleTags = () => {
@@ -25,9 +25,9 @@ const BlockItem = (props) => {
           )}
         </span>
       </p>
-      <ShowTags visibility={visibleTags} cat={1} />
+      <ShowTags visibility={visibleTags} cat={props.cat} />
     </div>
   );
 };
 
-export default BlockItem;
+export default TagBlock;
