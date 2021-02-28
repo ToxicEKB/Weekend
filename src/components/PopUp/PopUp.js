@@ -19,7 +19,7 @@ const PopUp = () => {
 
   return (
     <>
-      {visiblePopUp === true ? (
+      {visiblePopUp ? (
         <div className="p-2.5 w-96 mx-auto bg-gray-200">
           <div className="px-4 py-5 w-60 relative bg-white rounded-2xl">
             <button
