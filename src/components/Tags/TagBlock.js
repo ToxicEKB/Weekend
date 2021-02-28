@@ -18,10 +18,10 @@ const TagBlock = (props) => {
       >
         {props.title} &nbsp;
         <span className="text-sm">
-          {!visibleTags ? (
-            <FontAwesomeIcon icon={faChevronDown} />
-          ) : (
+          {visibleTags ? (
             <FontAwesomeIcon icon={faChevronUp} />
+          ) : (
+            <FontAwesomeIcon icon={faChevronDown} />
           )}
         </span>
       </p>
