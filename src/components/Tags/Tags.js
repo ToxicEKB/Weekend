@@ -1,28 +1,127 @@
-function Tags() {
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import ShowTags from "./ShowTags";
+
+import TagItem from "./TagItem";
+import { tagsItems } from "./tagsItems";
+
+const Tags = () => {
+  const [visibleTags, setVisibleTags] = useState(false);
+
+  const toggleVisibleTags = () => {
+    setVisibleTags(!visibleTags);
+  };
+
   return (
     <div className="p-2.5 w-96 mx-auto">
-      <h2 className="mb-7 text-green-600 text-xl font-bold text-center">Воспользуйтесь уже готовыми подборками</h2>
-      <p className="mb-5 text-base font-medium">Лучшие подборки</p>
-      <div className="flex flex-wrap">
-        <a className="px-2 py-1 mr-4 mb-5 rounded-md bg-green-500 no-underline text-base hover:bg-green-400" href="#">#рейтинг_5</a>
-        <a className="px-2 py-1 mr-4 mb-5 rounded-md bg-green-500 no-underline text-base hover:bg-green-400"href="#">#дети_3+</a>
-        <a className="px-2 py-1 mr-4 mb-5 rounded-md bg-green-500 no-underline text-base hover:bg-green-400"href="#">#дети_12+</a>
-        <a className="px-2 py-1 mr-4 mb-5 rounded-md bg-green-500 no-underline text-base hover:bg-green-400"href="#">#антистресс</a>
-      </div>
-      <p className="mb-5 text-base font-medium">Развитие навыков</p>
-      <div className="flex flex-wrap">
-        <a className="px-2 py-1 mr-4 mb-5 rounded-md bg-green-500 no-underline text-base hover:bg-green-400" href="#">#коммуникация</a>
-        <a className="px-2 py-1 mr-4 mb-5 rounded-md bg-green-500 no-underline text-base hover:bg-green-400" href="#">#концентрация</a>
-        <a className="px-2 py-1 mr-4 mb-5 rounded-md bg-green-500 no-underline text-base hover:bg-green-400" href="#">#креативность</a>
-        <a className="px-2 py-1 mr-4 mb-5 rounded-md bg-green-500 no-underline text-base hover:bg-green-400" href="#">#физическое_развитие</a>
-      </div>
-      <p className="mb-5 text-base font-medium">Местоположение</p>
-      <div className="flex flex-wrap">
-        <a className="px-2 py-1 mr-4 mb-5 rounded-md bg-green-500 no-underline text-base hover:bg-green-400" href="#">#в_помещении</a>
-        <a className="px-2 py-1 mr-4 mb-5 rounded-md bg-green-500 no-underline text-base hover:bg-green-400" href="#">#на_улице</a>
-      </div>
+      <h2 className="mb-7 text-green-600 text-xl font-bold text-center">
+        Воспользуйтесь уже готовыми подборками
+      </h2>
+
+     
+      {/* <div className="">
+        {tagsItems.map(({ text }, idx) => {
+          return <TagItem text={text} key={idx} />;
+        })}
+      </div> */}
+
+      <p
+        className="mb-5 text-base font-medium cursor-pointer hover:opacity-70"
+        onClick={toggleVisibleTags}
+      >
+        Лучшие подборки &nbsp;
+        <span className="text-sm">
+          {visibleTags === false ? (
+            <FontAwesomeIcon icon={faChevronDown} />
+          ) : (
+            <FontAwesomeIcon icon={faChevronUp} />
+          )}
+        </span>
+      </p>
+
+      <p
+        className="mb-5 text-base font-medium cursor-pointer hover:opacity-70"
+        onClick={toggleVisibleTags}
+      >
+        Лучшие подборки 2&nbsp;
+        <span className="text-sm">
+          {visibleTags === false ? (
+            <FontAwesomeIcon icon={faChevronDown} />
+          ) : (
+            <FontAwesomeIcon icon={faChevronUp} />
+          )}
+        </span>
+      </p>
+
+      <p
+        className="mb-5 text-base font-medium cursor-pointer hover:opacity-70"
+        onClick={toggleVisibleTags}
+      >
+        Лучшие подборки 3&nbsp;
+        <span className="text-sm">
+          {visibleTags === false ? (
+            <FontAwesomeIcon icon={faChevronDown} />
+          ) : (
+            <FontAwesomeIcon icon={faChevronUp} />
+          )}
+        </span>
+      </p>
+
+      <ShowTags visibility={visibleTags} />
+
+      {/* {visibleTags ? (
+        <div className="flex flex-wrap">
+          <TagItem name="рейтинг_5" url="/#" />
+          <TagItem name="дети_3+" url="/#" />
+          <TagItem name="дети_12+" url="/#" />
+          <TagItem name="антистресс" url="/#" />
+        </div>
+      ) : null} */}
+
+      {/* <p
+        className="mb-5 text-base font-medium cursor-pointer hover:opacity-70"
+        onClick={toggleVisibleTags}
+      >
+        Развитие навыков &nbsp;
+        <span className="text-sm">
+          {visibleTags === false ? (
+            <FontAwesomeIcon icon={faChevronDown} />
+          ) : (
+            <FontAwesomeIcon icon={faChevronUp} />
+          )}
+        </span>
+      </p>
+      {visibleTags ? (
+        <div className="flex flex-wrap">
+          <TagItem name="коммуникация" />
+          <TagItem name="концентрация" />
+          <TagItem name="креативность" />
+          <TagItem name="физическое_развитие" />
+        </div>
+      ) : null}
+
+      <p
+        className="mb-5 text-base font-medium cursor-pointer hover:opacity-70"
+        onClick={toggleVisibleTags}
+      >
+        Местоположение &nbsp;
+        <span className="text-sm">
+          {visibleTags === false ? (
+            <FontAwesomeIcon icon={faChevronDown} />
+          ) : (
+            <FontAwesomeIcon icon={faChevronUp} />
+          )}
+        </span>
+      </p>
+      {visibleTags ? (
+        <div className="flex flex-wrap">
+          <TagItem name="в_помещении" />
+          <TagItem name="на_улице" />
+        </div>
+      ) : null} */}
     </div>
   );
-}
+};
 
 export default Tags;
