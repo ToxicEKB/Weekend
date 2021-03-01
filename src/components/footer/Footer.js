@@ -1,11 +1,13 @@
-import "../tailwind.output.css";
+import React from "react";
+import "../../tailwind.output.css";
 import "./Footer.css";
+
 import Vector from "./footerImg/Vector.svg";
 import Vector_1 from "./footerImg/Vector_1.svg";
 import Vector_2 from "./footerImg/Vector_2.svg";
 import Vector_3 from "./footerImg/Vector_3.svg";
 
-function Footer() {
+const Footer = () => {
   return (
     <div className="footer mx-auto">
         <div className="footer_icon mx-auto flex justify-between bg-black items-center mb-4">
