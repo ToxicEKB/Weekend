@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
-import "../../tailwind.output.css";
+import { useForm } from "react-hook-form";
 import "./Collaboration.css";
 import { CollaborationText } from "./CollaborationText";
 
 export const Collaboration = () => {
     const [ isShown, setIsShown ] = useState(true);
     const [ check, setCheck ] = useState(false);
-    const [ form, setForm ] = useState({
-		yourCompanyName: '',
-		name: '',
-        phone: '',
-        email: '',
-	});
+    const { register, handleSubmit } = useForm();
+    const onSubmit = (data) => {console.log(data)};
+    // const [ form, setForm ] = useState({
+	// 	yourCompanyName: '',
+	// 	name: '',
+    //     phone: '',
+    //     email: '',
+	// });
 
-    const changeHandler = (event) => {
-		setForm({ ...form, [event.target.name]: event.target.value });
-	};
+    // const changeHandler = (event) => {
+	// 	setForm({ ...form, [event.target.name]: event.target.value });
+	// };
     const toSend = () => {
         setIsShown(!isShown);
     };
@@ -33,33 +35,37 @@ export const Collaboration = () => {
             <button onClick={getSamples}>Получить образцы документов</button>             
             <h1>Начать сотрудничество</h1>
            { isShown &&
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}> 
                 <p><input 
                     type="text" 
                     name="yourCompanyName" 
-                    value={form.yourCompanyName}
-                    onChange={changeHandler} 
+                    ref={register}
+                    // value={form.yourCompanyName}
+                    // onChange={changeHandler} 
                     placeholder="Название Вашей компании">
                 </input></p>
                 <p><input 
                     type="text" 
                     name="name" 
-                    value={form.name}
-                    onChange={changeHandler} 
+                    ref={register}
+                    // value={form.name}
+                    // onChange={changeHandler} 
                     placeholder="Имя">
                 </input></p>
                 <p><input
                     type="tel" 
-                    name="phone" 
-                    value={form.phone}
-                    onChange={changeHandler} 
+                    name="phone"
+                    ref={register}
+                    // value={form.phone}
+                    // onChange={changeHandler} 
                     placeholder="Телефон">
                 </input></p>
                 <p><input
                     type="email" 
                     name="email" 
-                    value={form.email}
-                    onChange={changeHandler} 
+                    ref={register}
+                    // value={form.email}
+                    // onChange={changeHandler} 
                     placeholder="e-mail" 
                     className="email">
                 </input></p>

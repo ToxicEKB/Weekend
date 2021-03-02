@@ -3,6 +3,7 @@ import './App.css';
 import React from 'react';
 import Footer from './components/footer/Footer';
 import "./tailwind.output.css";
+import {Collaboration} from './components/collaboration/Collaboration';
 
 function App() {
   // const routes = useRoutes();
@@ -24,6 +25,7 @@ function App() {
         </a>
       </header>
       <Footer />
+      <Collaboration />
     </div>
   );
 }

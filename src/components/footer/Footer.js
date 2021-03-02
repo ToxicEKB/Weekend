@@ -1,5 +1,4 @@
 import React from "react";
-import "../../tailwind.output.css";
 import "./Footer.css";
 
 import Vector from "./footerImg/Vector.svg";
