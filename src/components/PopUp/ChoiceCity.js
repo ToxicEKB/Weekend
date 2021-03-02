@@ -7,13 +7,13 @@ const ChoiceCity = () => {
         placeholder="Ваш город"
       />
       <ul className="">
-        <li className="list-none mt-1.5">
-          <a href="#" className="no-underline hover:underline">
+        <li className="list-none mt-1.5 hover:bg-gray-100">
+          <a href="#" className="block no-underline">
             Москва
           </a>
         </li>
-        <li className="list-none mt-1.5">
-          <a href="#" className="no-underline hover:underline">
+        <li className="list-none mt-1.5 hover:bg-gray-100">
+          <a href="#" className="block no-underline">
             Екатеринбург
           </a>
         </li>

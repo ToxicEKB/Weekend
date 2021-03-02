@@ -6,6 +6,7 @@ import Footer from './components/footer/Footer.js';
 import About from "./components/About";
 import Category from "./components/Category";
 
+
 function App() {
   const [visiblePopUp, setvisiblePopUp] = useState(true);
 
