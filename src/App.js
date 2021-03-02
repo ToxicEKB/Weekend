@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./tailwind.output.css";
-import Tags from "./components/Tags";
-import PopUp from "./components/PopUp";
-import Footer from "./components/footer/Footer.js";
+import Tags from './components/Tags/Tags';
+import PopUp from './components/PopUp';
+import Footer from './components/footer/Footer.js';
+import About from "./components/About";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
   return (
     <div className="App">
       {visiblePopUp ? <PopUp updateData={togglePopUp} /> : null}
+      <About />
       <Tags />
       <Footer />
     </div>
