@@ -20,9 +20,9 @@ const PopUp = (props) => {
           >
             <IconClose />
           </button>
-          <div>
-            <p className="mb-5 text-base font-bold text-center">
-              <IconMap />
+          <div className="flex items-center">
+            <IconMap />
+            <p className="mb-6 text-base font-bold text-center">
               Ваш город Москва?
             </p>
           </div>
