@@ -6,21 +6,12 @@ import { CollaborationText } from "./CollaborationText";
 export const Collaboration = () => {
     const [ isShown, setIsShown ] = useState(true);
     const [ check, setCheck ] = useState(false);
-    const { register, handleSubmit } = useForm();
-    const onSubmit = (data) => {console.log(data)};
-    // const [ form, setForm ] = useState({
-	// 	yourCompanyName: '',
-	// 	name: '',
-    //     phone: '',
-    //     email: '',
-	// });
 
-    // const changeHandler = (event) => {
-	// 	setForm({ ...form, [event.target.name]: event.target.value });
-	// };
-    const toSend = () => {
+    const { register, handleSubmit, errors } = useForm();
+    const onSubmit = (data) => {
         setIsShown(!isShown);
-    };
+        console.log(data)};
+
     const getChecked = (e) => {
         setCheck(!check);
         document.getElementById('submit').disabled = check
@@ -39,41 +30,32 @@ export const Collaboration = () => {
                 <p><input 
                     type="text" 
                     name="yourCompanyName" 
-                    ref={register}
-                    // value={form.yourCompanyName}
-                    // onChange={changeHandler} 
+                    ref={register({ required: true })}
                     placeholder="Название Вашей компании">
                 </input></p>
                 <p><input 
                     type="text" 
                     name="name" 
-                    ref={register}
-                    // value={form.name}
-                    // onChange={changeHandler} 
+                    ref={register({ required: true })}
                     placeholder="Имя">
                 </input></p>
                 <p><input
                     type="tel" 
                     name="phone"
-                    ref={register}
-                    // value={form.phone}
-                    // onChange={changeHandler} 
+                    ref={register({ required: true })}
                     placeholder="Телефон">
                 </input></p>
                 <p><input
                     type="email" 
                     name="email" 
-                    ref={register}
-                    // value={form.email}
-                    // onChange={changeHandler} 
+                    ref={register({ required: true })}
                     placeholder="e-mail" 
                     className="email">
                 </input></p>
                 <p><input 
                     id="submit"
                     disabled={!check}
-                    type="submit" 
-                    onClick={toSend}
+                    type="submit"
                     value="Отправить">
                 </input></p> 
                 <p><input 
