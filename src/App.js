@@ -25,7 +25,6 @@ function App() {
         </a>
       </header>
       <Footer />
-      <Collaboration />
     </div>
   );
 }
