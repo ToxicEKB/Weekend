@@ -6,7 +6,6 @@ import "./tailwind.output.css";
 import {Collaboration} from './components/collaboration/Collaboration';
 
 function App() {
-  // const routes = useRoutes();
   return (
     <div className="App">
       <Footer />
