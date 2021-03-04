@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
+import IconClose from "./icons/IconClose";
+import IconMap from "./icons/IconMap";
 import BtnChoice from "./BtnChoice";
 import ChoiceCity from "./ChoiceCity";
 import useVisibilityToggler from "./useVisibilityToggler";
@@ -12,20 +12,17 @@ const PopUp = (props) => {
 
   return (
     <>
-      <div className="absolute top-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50">
-        <div className="px-4 py-5 w-60 relative bg-white rounded-2xl">
+      <div className="fixed top-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50">
+        <div className="px-10 py-8 w-72 relative bg-white rounded-2xl">
           <button
-            className="p-1 absolute -top-2 right-1 text-green-600 text-2xl border-none bg-transparent cursor-pointer hover:opacity-70 focus:outline-none"
+            className="p-1 absolute top-2 right-2 text-gray-400 border-none bg-transparent cursor-pointer hover:opacity-70 focus:outline-none"
             onClick={props.updateData}
           >
-            &times;
+            <IconClose />
           </button>
-          <div>
-            <p className="mb-5 text-base font-bold text-center">
-              <FontAwesomeIcon
-                icon={faMapMarkerAlt}
-                className="mr-2 text-green-600 text-xl"
-              />
+          <div className="flex items-center">
+            <IconMap />
+            <p className="mb-6 text-base font-bold text-center">
               Ваш город Москва?
             </p>
           </div>
