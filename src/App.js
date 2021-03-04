@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import Footer from './footer/Footer.js';
-// This one import will make Tailwind’s utility classes available to the entire app,
-// no need to import it again elsewhere.
+import React from 'react';
+import Footer from './components/footer/Footer';
 import "./tailwind.output.css";
+import {Collaboration} from './components/collaboration/Collaboration';
 
 function App() {
+  // const routes = useRoutes();
   return (
     <div className="App">
       <header className="App-header">
