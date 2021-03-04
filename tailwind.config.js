@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
+    fontFamily: {
+      sans: ["Montserrat", "ui-sans-serif", "system-ui"],
+    },
     minWidth: {
       14: "56px",
     },
@@ -21,11 +24,21 @@ module.exports = {
       Blue: "#466FBD",
       Crimson: "#BD467F",
     }),
+    borderRadius: {
+      none: "0",
+      sm: "0.125rem",
+      DEFAULT: "0.25rem",
+      md: "0.375rem",
+      lg: "0.5rem",
+      full: "9999px",
+      "10px": "10px",
+    },
   },
   variants: {
     extend: {
       backgroundColor: ["active"],
       borderColor: ["active"],
+      borderRadius: ["hover", "focus"],
     },
   },
   plugins: [],
