@@ -3,6 +3,7 @@ import IconMap from "./icons/IconMap";
 import BtnChoice from "./BtnChoice";
 import ChoiceCity from "./ChoiceCity";
 import useVisibilityToggler from "./useVisibilityToggler";
+import { useState } from "react";
 
 const PopUp = (props) => {
   const [ChoiseCityComponent, toggleVisibilityCity] = useVisibilityToggler(
@@ -10,10 +11,12 @@ const PopUp = (props) => {
     false
   );
 
+  const [city, setCity] = useState("Москва");
+
   return (
     <>
       <div className="fixed top-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50">
-        <div className="px-10 py-8 w-72 relative bg-white rounded-2xl">
+        <div className="px-9 py-8 relative bg-white rounded-2xl">
           <button
             className="p-1 absolute top-2 right-2 text-gray-400 border-none bg-transparent cursor-pointer hover:opacity-70 focus:outline-none"
             onClick={props.updateData}
@@ -22,7 +25,7 @@ const PopUp = (props) => {
           </button>
           <div className="flex items-center">
             <IconMap />
-            <p className="mb-6 text-base font-bold text-center">
+            <p className="mb-6 text-lg font-semibold text-center">
               Ваш город Москва?
             </p>
           </div>
@@ -32,6 +35,7 @@ const PopUp = (props) => {
               <BtnChoice
                 name="Выбор города"
                 updateData={toggleVisibilityCity}
+                city={city}
               />
             </div>
           ) : null}
