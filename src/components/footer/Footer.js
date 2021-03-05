@@ -10,7 +10,7 @@ import Vector_3 from "./footerImg/Vector_44.svg";
 const Footer = () => {
   return (
     <div className="footer mx-auto">
-        <div className="flex pb-5">
+        <div className="flex pb-5 footer_bg">
           <div className="pt-10">
             <img src={logo}></img>
           </div>
