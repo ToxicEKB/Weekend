@@ -1,9 +1,9 @@
 .footer {
     width: 375px;
-    background-image: url(./footerImg/Rectangle\ 396.png);
-    background-repeat: no-repeat;
 }
 .footer_icon {
-    width: 158px;
-    height: 22px;
+    width: 182px;
+}
+.footer_copyright {
+    font-size: 10px;
 }
