@@ -48,6 +48,7 @@ module.exports = {
   },
   variants: {
     extend: {
+      textColor: ["active"],
       backgroundColor: ["active"],
       borderColor: ["active"],
       borderRadius: ["hover", "focus"],

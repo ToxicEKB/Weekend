@@ -5,7 +5,7 @@ const ShowTags = (props) => {
   return (
     <div>
       {props.visibility ? (
-        <div className={`flex flex-wrap
+        <div className={`flex flex-wrap mb-3
         ${
           props.cat === 1
             ? "justify-between"

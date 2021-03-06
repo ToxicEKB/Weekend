@@ -4,8 +4,8 @@ import RectRight from "./icons/RectRight";
 
 const Tags = () => {
   return (
-    <div className="p-2.5 w-96 mx-auto">
-      <div className="mb-7 flex justify-center items-center">
+    <div className="px-3 w-96 mx-auto">
+      <div className="mb-5 flex justify-center items-center">
         <RectLeft />
         <h2 className="mx-10 text-Gray text-xl font-semibold tracking-wide">
           Готовые сеты

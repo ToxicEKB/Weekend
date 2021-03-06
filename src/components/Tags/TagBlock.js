@@ -4,7 +4,7 @@ import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import ShowTags from "./ShowTags";
 
 const TagBlock = (props) => {
-  const [visibleTags, setVisibleTags] = useState(false);
+  const [visibleTags, setVisibleTags] = useState(true);
 
   const toggleVisibleTags = () => {
     setVisibleTags(!visibleTags);
@@ -13,7 +13,7 @@ const TagBlock = (props) => {
   return (
     <div className="text-Gray">
       <p
-        className="mb-5 text-Gray text-base font-medium cursor-pointer hover:text-Orange"
+        className="mb-3 text-Gray text-base font-medium cursor-pointer hover:text-Orange"
         onClick={toggleVisibleTags}
       >
         {props.title} &nbsp;
