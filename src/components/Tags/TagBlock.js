@@ -11,9 +11,9 @@ const TagBlock = (props) => {
   };
 
   return (
-    <div className="">
+    <div className="text-Gray">
       <p
-        className="mb-5 text-base font-medium cursor-pointer hover:opacity-70"
+        className="mb-5 text-Gray text-base font-medium cursor-pointer hover:text-Orange"
         onClick={toggleVisibleTags}
       >
         {props.title} &nbsp;
