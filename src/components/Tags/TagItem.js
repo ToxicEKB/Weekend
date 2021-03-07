@@ -1,10 +1,15 @@
-const TagItem = (props) => {
+const TagItem = ({ item }) => {
   return (
     <a
-      className="px-2 py-1 rounded-md bg-green-500 no-underline text-base hover:bg-green-400"
-      href={`${props.item.url}`}
+      className={`px-3.5 py-1.5 rounded-2xl no-underline text-white text-xs font-semibold hover:shadow-drop
+        ${
+          item.cat === 1
+            ? "bg-Orange"
+            : `${item.cat === 2 ? "bg-Blue" : "bg-Sea"}`
+        } `}
+      href={`${item.url}`}
     >
-      {props.item.text}
+      {item.text}
     </a>
   );
 };
