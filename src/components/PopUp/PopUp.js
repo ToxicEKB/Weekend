@@ -3,15 +3,12 @@ import IconMap from "./icons/IconMap";
 import BtnChoice from "./BtnChoice";
 import ChoiceCity from "./ChoiceCity";
 import useVisibilityToggler from "./useVisibilityToggler";
-import { useState } from "react";
 
-const PopUp = (props) => {
+const PopUp = ({ updateData }) => {
   const [ChoiseCityComponent, toggleVisibilityCity] = useVisibilityToggler(
     <ChoiceCity />,
     false
   );
-
-  const [city, setCity] = useState("Москва");
 
   return (
     <>
@@ -19,7 +16,7 @@ const PopUp = (props) => {
         <div className="px-9 py-8 relative bg-white rounded-2xl">
           <button
             className="p-1 absolute top-2 right-2 text-gray-400 border-none bg-transparent cursor-pointer hover:opacity-70 focus:outline-none"
-            onClick={props.updateData}
+            onClick={updateData}
           >
             <IconClose />
           </button>
@@ -31,11 +28,10 @@ const PopUp = (props) => {
           </div>
           {!ChoiseCityComponent ? (
             <div className="flex justify-between">
-              <BtnChoice name="Да" updateData={props.updateData} />
+              <BtnChoice name="Да" updateData={updateData} />
               <BtnChoice
                 name="Выбор города"
                 updateData={toggleVisibilityCity}
-                city={city}
               />
             </div>
           ) : null}

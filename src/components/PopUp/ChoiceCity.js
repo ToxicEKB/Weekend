@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const ChoiceCity = (props) => {
-  const [city, setCity] = useState(props.city);
+const ChoiceCity = () => {
+  const [city, setCity] = useState("Москва");
 
   return (
     <div>
@@ -14,7 +14,7 @@ const ChoiceCity = (props) => {
         <li className="list-none mt-1.5 hover:text-Sea">
           <a href="#" className="block no-underline"
           onClick={() => {
-            setCity("Москва")
+            setCity("Москва");
             console.log(city);
           }}>
             Москва
@@ -23,7 +23,7 @@ const ChoiceCity = (props) => {
         <li className="list-none mt-1.5 hover:text-Sea">
           <a href="#" className="block no-underline"
           onClick={() => {
-            setCity("Екатеринбург")
+            setCity("Екатеринбург");
             console.log(city);
           }}>
             Екатеринбург

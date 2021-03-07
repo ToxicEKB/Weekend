@@ -1,22 +1,23 @@
 import { useState } from "react";
 
-const BtnChoice = (props) => {
+const BtnChoice = ({ name, updateData }) => {
   const visibilityCity = true;
-  const [city, setCity] = useState(props.city);
+  const [city, setCity] = useState("Москва");
+
   return (
     <button
       className={`p-2 min-w-14 border border-Sea rounded-10px bg-transparent cursor-pointer hover:border-Orange focus:outline-none
         ${
-          props.name === "Да"
+          name === "Да"
             ? "text-white bg-Sea hover:bg-Orange hover:shadow-drop"
             : ""
         } `}
       onClick={() => {
-        props.updateData(visibilityCity);
-        props.name === "Да" ? console.log(city) : console.log("-->");
+        updateData(!visibilityCity);
+        name === "Да" ? console.log(city) : console.log("-->");
       }}
     >
-      {props.name}
+      {name}
     </button>
   );
 };
