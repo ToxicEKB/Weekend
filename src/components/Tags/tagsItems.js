@@ -6,16 +6,12 @@ export const tagsItems = [
   },
   {
     cat:1,
-    text: "#дети_3+", 
+    text: "#дети_12+", 
     url: "/222",
   },
   {
     cat:1,
-    text: "#дети_12+", 
-  },
-  {
-    cat:1,
-    text: "#антистресс"
+    text: "#дети_3+", 
   },
   {
     cat:2,
