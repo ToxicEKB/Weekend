@@ -1,8 +1,4 @@
-import { useState } from "react";
-
-const ChoiceCity = () => {
-  const [city, setCity] = useState("Москва");
-
+const ChoiceCity = ({ setActive, setCity }) => {
   return (
     <div>
       <input
@@ -11,27 +7,27 @@ const ChoiceCity = () => {
         placeholder="Ваш город"
       />
       <ul className="">
-        <li className="list-none mt-1.5 hover:text-Sea">
-          <a href="#" className="block no-underline"
+        <li
+          className="mt-1.5 block list-none cursor-pointer hover:text-Sea"
           onClick={() => {
             setCity("Москва");
-            console.log(city);
-          }}>
-            Москва
-          </a>
+            setActive(false);
+          }}
+        >
+          Москва
         </li>
-        <li className="list-none mt-1.5 hover:text-Sea">
-          <a href="#" className="block no-underline"
+        <li
+          className="mt-1.5 block list-none cursor-pointer hover:text-Sea"
           onClick={() => {
             setCity("Екатеринбург");
-            console.log(city);
-          }}>
-            Екатеринбург
-          </a>
+            setActive(false);
+          }}
+        >
+          Екатеринбург
         </li>
       </ul>
     </div>
   );
-}
+};
 
 export default ChoiceCity;
