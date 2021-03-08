@@ -4,7 +4,7 @@ const ChoiceCity = ({ setActive, setCity }) => {
       <input
         className="p-2 mb-2.5 w-56 border border-Sea rounded-lg focus:outline-none"
         type="text"
-        placeholder="Ваш город"
+        placeholder="Введите город"
       />
       <ul className="">
         <li

@@ -22,7 +22,7 @@ const PopUp = ({ setActive, setCity }) => {
       </button>
       <div className="flex items-center">
         <IconMap />
-        <p className="mb-6 text-lg font-semibold text-center">
+        <p className="mb-5 mt-1 text-lg font-semibold text-center">
           Ваш город Москва?
         </p>
       </div>
