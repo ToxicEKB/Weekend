@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./tailwind.output.css";
 import Tags from "./components/Tags";
 import Modal from "./components/Modal";
+import PopUp from "./components/PopUp";
 import Footer from "./components/footer/Footer.js";
 import About from "./components/About";
 import Category from "./components/Category";
@@ -19,10 +20,12 @@ function App() {
       >
         Город: {city}
       </button>
-      <Modal
-        active={modalActive} setActive={setModalActive}
-        city={city} setCity={setCity}
-      />
+      <Modal active={modalActive} setActive={setModalActive}>
+        <PopUp
+          setActive={setModalActive}
+          setCity={setCity}
+        />
+      </Modal>
       <About />
       <Category />
       <Tags />

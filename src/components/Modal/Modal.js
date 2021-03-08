@@ -1,7 +1,6 @@
-import PopUp from "../PopUp";
 import "./modal.css";
 
-const Modal = ({ active, setActive, setCity }) => {
+const Modal = ({ active, setActive, children }) => {
   return (
     <div
       className={active ? "modal active" : "modal"}
@@ -11,10 +10,7 @@ const Modal = ({ active, setActive, setCity }) => {
         className={active ? "modal__content active" : "modal__content"}
         onClick={(e) => e.stopPropagation()}
       >
-        <PopUp
-          setActive={setActive}
-          setCity={setCity}
-        />
+        {children}
       </div>
     </div>
   );

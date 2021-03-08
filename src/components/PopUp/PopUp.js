@@ -30,7 +30,7 @@ const PopUp = ({ setActive, setCity }) => {
         <div className="flex justify-between">
           <button
             className={
-              "p-2 min-w-14 border border-Sea rounded-10px bg-transparent cursor-pointer hover:border-Orange focus:outline-none text-white bg-Sea hover:bg-Orange hover:shadow-drop"
+              "p-2 min-w-14 rounded-10px text-white bg-Sea cursor-pointer hover:bg-Orange hover:shadow-drop focus:outline-none"
             }
             onClick={() => {
               setActive(false);
@@ -41,7 +41,7 @@ const PopUp = ({ setActive, setCity }) => {
           </button>
           <button
             className={
-              "p-2 min-w-14 border border-Sea rounded-10px bg-transparent cursor-pointer hover:border-Orange focus:outline-none"
+              "p-2 border border-Sea rounded-10px bg-transparent cursor-pointer hover:border-Orange focus:outline-none"
             }
             onClick={() => {
               toggleVisibilityCity();
