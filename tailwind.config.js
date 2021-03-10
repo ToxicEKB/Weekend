@@ -7,7 +7,7 @@ module.exports = {
       sans: ["Montserrat", "ui-sans-serif", "system-ui"],
     },
     minWidth: {
-      14: "56px",
+      14: "60px",
     },
     textColor: (theme) => ({
       ...theme("colors"),

@@ -1,44 +1,58 @@
 import IconClose from "./icons/IconClose";
 import IconMap from "./icons/IconMap";
-import BtnChoice from "./BtnChoice";
 import ChoiceCity from "./ChoiceCity";
 import useVisibilityToggler from "./useVisibilityToggler";
 
-const PopUp = (props) => {
+const PopUp = ({ setActive, setCity }) => {
   const [ChoiseCityComponent, toggleVisibilityCity] = useVisibilityToggler(
-    <ChoiceCity />,
+    <ChoiceCity
+      setActive={setActive}
+      setCity={setCity}
+    />,
     false
   );
 
   return (
-    <>
-      <div className="fixed top-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50">
-        <div className="px-10 py-8 w-72 relative bg-white rounded-2xl">
-          <button
-            className="p-1 absolute top-2 right-2 text-gray-400 border-none bg-transparent cursor-pointer hover:opacity-70 focus:outline-none"
-            onClick={props.updateData}
-          >
-            <IconClose />
-          </button>
-          <div className="flex items-center">
-            <IconMap />
-            <p className="mb-6 text-base font-bold text-center">
-              Ваш город Москва?
-            </p>
-          </div>
-          {!ChoiseCityComponent ? (
-            <div className="flex justify-between">
-              <BtnChoice name="Да" updateData={props.updateData} />
-              <BtnChoice
-                name="Выбор города"
-                updateData={toggleVisibilityCity}
-              />
-            </div>
-          ) : null}
-          {ChoiseCityComponent}
-        </div>
+    <div className="px-9 py-8 relative bg-white rounded-2xl">
+      <button
+        className="p-1 absolute top-2 right-2 text-gray-400 border-none bg-transparent cursor-pointer hover:opacity-70 focus:outline-none"
+        onClick={() => setActive(false)}
+      >
+        <IconClose />
+      </button>
+      <div className="flex items-center">
+        <IconMap />
+        <p className="mb-5 mt-1 text-lg font-semibold text-center">
+          Ваш город Москва?
+        </p>
       </div>
-    </>
+      {!ChoiseCityComponent ? (
+        <div className="flex justify-between">
+          <button
+            className={
+              "p-2 min-w-14 rounded-10px text-white bg-Sea cursor-pointer hover:bg-Orange hover:shadow-drop focus:outline-none"
+            }
+            onClick={() => {
+              setActive(false);
+              setCity("Москва");
+            }}
+          >
+            Да
+          </button>
+          <button
+            className={
+              "p-2 border border-Sea rounded-10px bg-transparent cursor-pointer hover:border-Orange focus:outline-none"
+            }
+            onClick={() => {
+              toggleVisibilityCity();
+            }}
+          >
+            Выбор города
+          </button>
+        </div>
+      ) : null}
+      {ChoiseCityComponent}
+    </div>
   );
 };
 
