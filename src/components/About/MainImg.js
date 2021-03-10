@@ -2,7 +2,7 @@ import React from "react";
 
 const MainImg = () => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center mb-5">
       <svg width="312" height="498" viewBox="0 0 312 498" fill="none"
            xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
         <path opacity="0.2"
