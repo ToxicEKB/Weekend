@@ -1,6 +1,6 @@
 import TagBlock from "./TagBlock";
-import RectLeft from "./icons/RectLeft";
-import RectRight from "./icons/RectRight";
+import RectLeft from "../../images/icons/RectLeft";
+import RectRight from "../../images/icons/RectRight";
 
 const Tags = () => {
   return (
