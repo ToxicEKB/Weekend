@@ -15,6 +15,7 @@ module.exports = {
         Orange: "#FF9F39",
         Blue: "#466FBD",
         Crimson: "#BD467F",
+        lightGray: "#F6F6F6",
       }),
       borderColor: (theme) => ({
         Sea: "#00CCA9",
@@ -29,12 +30,15 @@ module.exports = {
       boxShadow: {
         drop: "0 4px 4px rgba(0, 0, 0, 0.25)",
       },
+      minWidth: {
+        14: "60px",
+      },
+      maxWidth: {
+        25: "100px",
+      },
     },
     fontFamily: {
       sans: ["Montserrat", "ui-sans-serif", "system-ui"],
-    },
-    minWidth: {
-      14: "60px",
     },
   },
   variants: {
