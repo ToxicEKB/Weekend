@@ -1,25 +1,33 @@
-const ChoiceCity = () => {
+const ChoiceCity = ({ setActive, setCity }) => {
   return (
     <div>
       <input
-        className="p-2 mb-2.5 w-52 border border-Sea rounded-lg focus:outline-none"
+        className="p-2 mb-2.5 w-56 border border-Sea rounded-lg focus:outline-none"
         type="text"
-        placeholder="Ваш город"
+        placeholder="Введите город"
       />
       <ul className="">
-        <li className="list-none mt-1.5 hover:bg-gray-100">
-          <a href="#" className="block no-underline">
-            Москва
-          </a>
+        <li
+          className="mt-1.5 block list-none cursor-pointer hover:text-Sea"
+          onClick={() => {
+            setCity("Москва");
+            setActive(false);
+          }}
+        >
+          Москва
         </li>
-        <li className="list-none mt-1.5 hover:bg-gray-100">
-          <a href="#" className="block no-underline">
-            Екатеринбург
-          </a>
+        <li
+          className="mt-1.5 block list-none cursor-pointer hover:text-Sea"
+          onClick={() => {
+            setCity("Екатеринбург");
+            setActive(false);
+          }}
+        >
+          Екатеринбург
         </li>
       </ul>
     </div>
   );
-}
+};
 
 export default ChoiceCity;

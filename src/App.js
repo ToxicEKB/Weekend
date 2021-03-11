@@ -1,26 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./tailwind.output.css";
-import Tags from './components/Tags/Tags';
-import PopUp from './components/PopUp';
-import Footer from './components/footer/Footer.js';
+import Tags from "./components/Tags";
+import Modal from "./components/Modal";
+import PopUp from "./components/PopUp";
+import Footer from "./components/footer/Footer.js";
 import About from "./components/About";
 import Category from "./components/Category";
 
-
 function App() {
-  const [visiblePopUp, setvisiblePopUp] = useState(true);
+  const [modalActive, setModalActive] = useState(true);
 
-  useEffect(() => {
-    setvisiblePopUp(visiblePopUp);
-  }, []);
-
-  const togglePopUp = () => {
-    setvisiblePopUp(!visiblePopUp);
-  };
+  const [city, setCity] = useState("Москва");
 
   return (
     <div className="App">
-      {visiblePopUp ? <PopUp updateData={togglePopUp} /> : null}
+      <button
+        className="p-2 text-sm bg-Sea rounded-10px focus:outline-none"
+        onClick={() => setModalActive(true)}
+      >
+        Город: {city}
+      </button>
+      <Modal active={modalActive} setActive={setModalActive}>
+        <PopUp
+          setActive={setModalActive}
+          setCity={setCity}
+        />
+      </Modal>
       <About />
       <Category />
       <Tags />
