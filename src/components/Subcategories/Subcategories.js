@@ -1,7 +1,7 @@
 import SubCatItem from "./SubCatItem";
 import { subCatItems } from "./subCatItems";
 
-const Subcategories = () => {
+const SubCategories = () => {
   return (
     <div className="px-3 max-w-sm mx-auto flex justify-between">
       {subCatItems.map(({ icon, title }, idx) => {
@@ -11,4 +11,4 @@ const Subcategories = () => {
   );
 };
 
-export default Subcategories;
+export default SubCategories;

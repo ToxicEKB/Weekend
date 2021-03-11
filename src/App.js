@@ -6,6 +6,7 @@ import PopUp from "./components/PopUp";
 import Footer from "./components/footer/Footer.js";
 import About from "./components/About";
 import Category from "./components/Category";
+import SubCategories from "./components/SubCategories";
 
 function App() {
   const [modalActive, setModalActive] = useState(true);
@@ -26,6 +27,7 @@ function App() {
           setCity={setCity}
         />
       </Modal>
+      <SubCategories />
       <About />
       <Category />
       <Tags />
