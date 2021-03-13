@@ -27,7 +27,7 @@ function App() {
           setCity={setCity}
         />
       </Modal>
-      <SubCategories />
+      <SubCategories cat={2} />
       <About />
       <Category />
       <Tags />
