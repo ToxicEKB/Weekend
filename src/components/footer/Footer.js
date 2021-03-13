@@ -9,7 +9,7 @@ import Vector_3 from "./footerImg/Vector_44.svg";
 
 const Footer = () => {
   return (
-    <div className="footer mx-auto">
+    <div className="footer mx-auto footer_bg pb-4">
         <div className="flex pb-5">
           <div className="pt-10">
             <img src={logo}></img>
@@ -26,7 +26,7 @@ const Footer = () => {
             <p className="leading-3 text-left"><a href="" target="_blank" className="text-xs font-sans font-semibold text-gray-400">Политика конфиденциальности<br /> и обработки данных</a></p>
           </div>
         </div>
-        <p className="mb-4 mt-4 font-sans font-normal text-base leading-5 text-gray-400 text-center">All rights reserved &copy; 2021 Sdetmi.org</p>
+        <p className="mt-4 font-sans font-normal text-base leading-5 text-gray-400 text-center">All rights reserved &copy; 2021 Sdetmi.org</p>
     </div>
   );
 }
