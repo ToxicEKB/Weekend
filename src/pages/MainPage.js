@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import Modal from "../components/Modal";
 import PopUp from "../components/PopUp";
 import About from "../components/About";
@@ -23,12 +22,8 @@ const MainPage = () => {
         <PopUp setActive={setModalActive} setCity={setCity} />
       </Modal>
       <About />
-      <Link to="/category">
-        <Category />
-      </Link>
-      <Link to="/tags">
-        <Tags />
-      </Link>
+      <Category />
+      <Tags />
     </div>
   );
 };
