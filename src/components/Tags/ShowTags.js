@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import TagItem from "./TagItem";
 import { tagsItems } from "./tagsItems";
 
@@ -14,9 +15,11 @@ const ShowTags = ({ visibility, cat }) => {
           {tagsItems.map((item, idx) => {
             return (
               item.cat === cat && (
-                <div key={idx} className="mr-5 mb-5">
-                  <TagItem item={item} key={item.id} cat={item.cat} />
-                </div>
+                <Link to="/tags" key={idx}>
+                  <div className="mr-5 mb-5">
+                    <TagItem item={item} key={item.id} cat={item.cat} />
+                  </div>
+                </Link>
               )
             );
           })}
