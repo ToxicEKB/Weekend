@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./tailwind.output.css";
 import MainPage from "./pages/MainPage";
 import CategoryPage from "./pages/CategoryPage";
@@ -12,8 +13,10 @@ function App() {
   return (
     <React.StrictMode>
       <Router>
-        <div className="flex items-center border">
-          <img src={logo} alt="logo" className="justify-self-start" style={{ width: 159 }}/>
+        <div className="mb-3 flex items-center border">
+          <Link to="/">
+            <img src={logo} alt="logo" className="justify-self-start" style={{ width: 159 }}/>
+          </Link>
           <h3 className="m-auto">Здесь будет хэдэр</h3>
         </div>
         <Switch>
