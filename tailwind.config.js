@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      backgroundImage: (theme) => ({
+        "category": "url('components/Category/images/main/categoryBg.svg')",
+      }),
       textColor: (theme) => ({
         Sea: "#00CCA9",
         Orange: "#FF9F39",
