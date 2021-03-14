@@ -9,7 +9,7 @@ import Category from "./components/Category";
 import SubCategories from "./components/SubCategories";
 
 function App() {
-  const [modalActive, setModalActive] = useState(true);
+  const [modalActive, setModalActive] = useState(false);
 
   const [city, setCity] = useState("Москва");
 
@@ -27,7 +27,7 @@ function App() {
           setCity={setCity}
         />
       </Modal>
-      <SubCategories cat={2} />
+      <SubCategories cat={1} />
       <About />
       <Category />
       <Tags />

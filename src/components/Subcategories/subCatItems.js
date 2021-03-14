@@ -13,31 +13,37 @@ import IconGift from "./icons/IconGift";
 export const subCatItems = [
   {
     cat:1,
+    subCat: 1,
     icon: <IconDraw />,
     title: "Творчество",
   },
   {
     cat:1,
+    subCat: 2,
     icon: <IconRocket />,
     title: "Познание",
   },
   {
     cat:1,
+    subCat: 3,
     icon: <IconHome />,
     title: "Развлечения дома",
   },
   {
     cat:2,
+    subCat: 1,
     icon: <IconSport />,
     title: "Физическая активность",
   },
   {
     cat:2,
+    subCat: 2,
     icon: <IconLoge />,
     title: "Развлечения в городе",
   },
   {
     cat:2,
+    subCat: 3,
     icon: <IconMask />,
     title: "Культура и познание",
   },
