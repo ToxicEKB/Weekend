@@ -13,7 +13,7 @@ const MainPage = () => {
   return (
     <div className="App">
       <button
-        className="p-2 text-sm bg-Sea rounded-10px focus:outline-none"
+        className="p-1 text-xs focus:outline-none"
         onClick={() => setModalActive(true)}
       >
         Город: {city}
