@@ -2,9 +2,28 @@ import React from "react";
 import CategoryItem from "./CategoryItem";
 import RectLeftWhite from "./images/main/RectLeftWhite";
 import RectRightWhite from "./images/main/RectRightWhite";
-import { mockCategory } from "./mockCategory";
+import { useQuery } from "react-query";
+import { useHistory } from "react-router-dom";
+import { baseUrl } from "../../constants";
 
 const Category = () => {
+  const history = useHistory();
+  const getCategories = async () => {
+    return await fetch(`${baseUrl}/api/categories`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((data) => data.json().then(({ data }) => data).catch((err) => console.log(err)));
+  };
+
+  const { isLoading, isError, data, error } = useQuery("categories", getCategories);
+
+  const handleSelectCategory = (item) => {
+    history.push("/category");
+    console.log(item);
+  };
+
   return (
     <div className="w-96 md:w-full xl:w-full mx-auto flex flex-col text-center mb-7">
       <div className="bg-category sm:bg-Sea bg-no-repeat bg-cover bg-center">
@@ -16,8 +35,9 @@ const Category = () => {
             <RectRightWhite/>
           </div>
           <div className="flex flex-wrap justify-center">
-            {mockCategory.map((item, idx) => (
-              <CategoryItem img={item.img} name={item.name} key={idx}/>
+            {data?.map((item, idx) => (
+              <CategoryItem img={item.image} name={item.name} key={idx}
+                            onClick={() => handleSelectCategory(item)}/>
             ))}
           </div>
         </div>
