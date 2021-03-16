@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Modal from "../components/Modal";
 import PopUp from "../components/PopUp";
 import About from "../components/About";
-import Category from "../components/Category";
+import CategorySection from "../components/Category";
 import Tags from "../components/Tags";
 
 const MainPage = () => {
@@ -22,7 +22,7 @@ const MainPage = () => {
         <PopUp setActive={setModalActive} setCity={setCity} />
       </Modal>
       <About />
-      <Category />
+      <CategorySection />
       <Tags />
     </div>
   );
