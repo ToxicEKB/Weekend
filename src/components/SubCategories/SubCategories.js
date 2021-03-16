@@ -1,6 +1,4 @@
-import { useState } from "react";
 import SubCatItem from "./SubCatItem";
-import { subCatItems } from "./subCatItems";
 import { useQuery } from "react-query";
 import { getSubCategoriesFull, getSubCategoryById } from "../../helpers/requests";
 
@@ -15,14 +13,12 @@ const SubCategories = ({ subCategoriesIds }) => {
   console.log(subCategories);
 
   return (
-    <div className="px-3 mb-5 max-w-sm mx-auto flex justify-between">
-      {/*{subCategories.map((item, idx) => {*/}
-      {/*  return (*/}
-      {/*    item.cat === cat && (*/}
-      {/*    <SubCatItem icon={item.icon} title={item.title} key={idx}/>*/}
-      {/*    )*/}
-      {/*  );*/}
-      {/*})}*/}
+    <div className="max-w-sm px-3 mx-auto mb-5 flex justify-between">
+      {subCategories.map((item, idx) => {
+        return (
+          <SubCatItem key={idx} item={item} />
+        );
+      })}
     </div>
   );
 };
