@@ -26,7 +26,7 @@ function App() {
           </div>
           <Switch>
             <Route exact path="/" component={MainPage}/>
-            <Route path="/category" component={CategoryPage}/>
+            <Route path="/categories/:id" component={CategoryPage}/>
             <Route path="/tags" component={TagsPage}/>
             <Route path="/event" component={EventPage}/>
           </Switch>

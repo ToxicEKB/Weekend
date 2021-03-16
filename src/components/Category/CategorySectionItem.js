@@ -2,7 +2,7 @@ import React from "react";
 import { baseUrl } from "../../constants";
 import { Link } from "react-router-dom";
 
-const CategoryItem = ({ item: { id, name, image, isActive } }) => {
+const CategorySectionItem = ({ item: { id, name, image, isActive } }) => {
   return isActive ? (
     <Link to={`/categories/${id}`} className="flex flex-col w-40 mb-7 mr-4 cursor-pointer">
       <img src={`${baseUrl}/images/${image}`} className="mb-2.5 rounded-xl"
@@ -11,4 +11,4 @@ const CategoryItem = ({ item: { id, name, image, isActive } }) => {
     </Link>) : null;
 };
 
-export default CategoryItem;
+export default CategorySectionItem;
