@@ -39,6 +39,9 @@ module.exports = {
       maxWidth: {
         25: "100px",
       },
+      width: {
+        95: "375px"
+      }
     },
     fontFamily: {
       sans: ["Montserrat", "ui-sans-serif", "system-ui"],
