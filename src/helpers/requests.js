@@ -14,11 +14,7 @@ export const getCategoryById = (id) => getData(`${baseUrl}/api/categories/${id}`
 export const getSubCategories = () => getData(`${baseUrl}/api/subcategories`);
 export const getSubCategoryById = (id) => getData(`${baseUrl}/api/subcategories/${id}`);
 export const getSubCategoriesFull = (arrIds) => {
-  const subCategories = arrIds.map(async (itemId) => {
-    return await getSubCategoryById(itemId)
-      // .then((data) => data)
-      // .then((data) => console.log(data));
-  });
-  console.log(subCategories);
-  return subCategories;
+  return Promise.all(arrIds.map(async (itemId) => {
+    return await getSubCategoryById(itemId);
+  }));
 };
