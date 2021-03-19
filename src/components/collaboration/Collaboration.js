@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-import "./Collaboration.css";
 import { CollaborationText } from "./CollaborationText";
 
 export const Collaboration = () => {
@@ -16,7 +15,7 @@ export const Collaboration = () => {
     }; 
 
     return (
-        <div className="collaboration mx-auto text-left">
+        <div className="text-left md:px-9 px-6">
            <CollaborationText />
             <button onClick={getSamples}>Получить образцы документов</button>             
             <h1>Начать сотрудничество</h1>

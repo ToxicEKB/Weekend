@@ -8,6 +8,9 @@ import MainPage from "./pages/MainPage";
 import CategoryPage from "./pages/CategoryPage";
 import TagsPage from "./pages/TagsPage";
 import EventPage from "./pages/EventPage";
+import Politics from "./components/politics/Politics.js";
+import Collaboration from "./components/collaboration/Collaboration.js";
+import Contacts from "./components/contacts/Contacts.js";
 import Footer from "./components/footer/Footer.js";
 import logo from "./images/logo.png";
 
@@ -29,6 +32,9 @@ function App() {
             <Route path="/categories/:id" component={CategoryPage}/>
             <Route path="/tags" component={TagsPage}/>
             <Route path="/event" component={EventPage}/>
+            <Route path="/politics" component={Politics}/>
+            <Route path="/collaboration" component={Collaboration}/>
+            <Route path="/contacts" component={Contacts}/>
           </Switch>
           <Footer/>
         </Router>
