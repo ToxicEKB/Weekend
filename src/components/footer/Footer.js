@@ -36,9 +36,9 @@ const Footer = () => {
                   </a>
               </div>
              <div>
-             <p className="leading-3 mb-2 text-left"><a href="/contacts" target="_blank" className="text-xs font-sans font-semibold text-gray-400">Контакты</a></p>
-              <p className="leading-3 mb-2 text-left"><a href="/collaboration" target="_blank" className="text-xs font-sans font-semibold text-gray-400">Сотрудничество</a></p>
-              <p className="leading-3 text-left"><a href="/politics" target="_blank" className="text-xs font-sans font-semibold text-gray-400">Политика конфиденциальности<br /> и обработки данных</a></p>
+             <p className="leading-3 mb-2 text-left"><a href="/contacts" target="_blank" className="text-xs md:text-sm font-sans font-semibold text-gray-400">Контакты</a></p>
+              <p className="leading-3 mb-2 text-left"><a href="/collaboration" target="_blank" className="text-xs md:text-sm font-sans font-semibold text-gray-400">Сотрудничество</a></p>
+              <p className="leading-3 text-left"><a href="/politics" target="_blank" className="text-xs md:text-sm font-sans font-semibold text-gray-400">Политика конфиденциальности<br /> и обработки данных</a></p>
              </div>
             </div>
           </div>
