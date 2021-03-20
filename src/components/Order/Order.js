@@ -1,9 +1,17 @@
 import React, { useState } from "react"
 import "./style.css"
 import IconCheckbox from "./icons/IconCheckbox.js"
+import { useForm } from "react-hook-form"
+import Input from "./Input"
 
 const Order = (props) => {
-    const {} = props
+    const { postOrder, data } = props
+    const { register, handleSubmit, errors, trigger } = useForm()
+
+    const onSubmit = (newData) => {
+        console.log(newData)
+        postOrder(newData)
+    }
 
     const [checked, setChecked] = useState(false)
     const handleCheck = () => {
@@ -19,59 +27,119 @@ const Order = (props) => {
                     сейчас
                 </h3>
             </div>
-            <form className="flex flex-col box-border order-form">
-                <label className="flex flex-col">
-                    <span className="order-label__text">имя</span>
-                    <input
-                        placeholder="Введите имя"
-                        className="box-border rounded-10px border order__input"
-                    />
-                </label>
-                <label className="flex flex-col">
-                    <span className="order-label__text">телефон</span>
-                    <input
-                        placeholder="+7 - (xxx) - xxx - xx - xx"
-                        className="box-border rounded-10px border order__input"
-                    />
-                </label>
-                <label className="flex flex-col">
-                    <span className="order-label__text">дата и время</span>
-                    <input
-                        placeholder="Например: 19.03.2021 в 14:00"
-                        className="box-border rounded-10px border order__input"
-                    />
-                </label>
-                <label className="flex flex-col">
-                    <span className="order-label__text">адрес</span>
-                    <input
-                        placeholder="Введите адрес"
-                        className="box-border rounded-10px border order__input"
-                    />
-                </label>
-                <label className="flex flex-col">
-                    <span className="order-label__text">
-                        количество и возраст детей
-                    </span>
-                    <input
-                        placeholder="Например: 2 детей, 8 и 10 лет"
-                        className="box-border rounded-10px border order__input"
-                    />
-                </label>
+            <form
+                className="flex flex-col box-border order-form"
+                onSubmit={handleSubmit(onSubmit)}
+            >
+                <Input
+                    name="name"
+                    trigger={trigger}
+                    defaultValue={data.name}
+                    register={register}
+                    error={errors.name}
+                    title="Имя"
+                    required={{
+                        required: true,
 
-                <label className="flex flex-col">
-                    <span className="order-label__text">
-                        количество взрослых
-                    </span>
-                    <input
-                        placeholder="Например: 2"
-                        className="box-border rounded-10px border order__input"
-                    />
-                </label>
+                        minLength: {
+                            value: 2,
+                            message: "поле должно быть заполнено",
+                        },
+                    }}
+                />
+
+                <Input
+                    name="phone"
+                    trigger={trigger}
+                    defaultValue={data.phone}
+                    register={register}
+                    title="телефон"
+                    error={errors.phone}
+                    required={{
+                        required: true,
+                        minLength: {
+                            value: 10,
+                            message: "номер телефона слишком короткий",
+                        },
+                        maxLength: {
+                            value: 12,
+                            message: "номер телефона слишком длинный",
+                        },
+                        pattern: {
+                            value: /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/i,
+                            message: "номер телефона кривой",
+                        },
+                    }}
+                />
+
+                <Input
+                    trigger={trigger}
+                    name="email"
+                    defaultValue={data.email}
+                    register={register}
+                    title="почта"
+                    error={errors.email}
+                    required={{
+                        required: true,
+
+                        pattern: {
+                            value: /^\S+@\S+$/i,
+                            message: "не верно указана почта",
+                        },
+                    }}
+                />
+
+                <Input
+                    trigger={trigger}
+                    name="date"
+                    defaultValue={data.date}
+                    register={register}
+                    title="дата и время"
+                    error={errors.date}
+                    required={{
+                        required: true,
+                        minLength: {
+                            value: 2,
+                            message: "не верно указана дата",
+                        },
+                    }}
+                />
+                <Input
+                    trigger={trigger}
+                    name="address"
+                    defaultValue={data.address}
+                    register={register}
+                    title="адрес"
+                    error={errors.address}
+                    required={{
+                        required: true,
+                        minLength: {
+                            value: 2,
+                            message: "не верно указан адрес",
+                        },
+                    }}
+                />
+                <Input
+                    trigger={trigger}
+                    name="persons"
+                    defaultValue={data.persons}
+                    register={register}
+                    title="количество детей"
+                />
+
+                <Input
+                    trigger={trigger}
+                    name="parents"
+                    defaultValue={data.parents}
+                    register={register}
+                    title="количество взрослых"
+                />
+
                 <input
                     type="submit"
                     value="Оставить заявку"
                     className={
-                        checked
+                        checked && Object.keys(errors).length <= 0
                             ? "order-form__button"
                             : "order-form__button disabled"
                     }
