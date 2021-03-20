@@ -11,8 +11,11 @@ import EventPage from "./pages/EventPage";
 import Politics from "./components/politics/Politics.js";
 import Collaboration from "./components/collaboration/Collaboration.js";
 import Contacts from "./components/contacts/Contacts.js";
+import Favorites from "./components/Favorites/Favorites.js";
 import Footer from "./components/footer/Footer.js";
 import logo from "./images/logo.png";
+import { CookiesProvider } from 'react-cookie';
+
 
 const queryClient = new QueryClient();
 
@@ -35,6 +38,7 @@ function App() {
             <Route path="/politics" component={Politics}/>
             <Route path="/collaboration" component={Collaboration}/>
             <Route path="/contacts" component={Contacts}/>
+            <Route path="/favorites" component={Favorites}/>
           </Switch>
           <Footer/>
         </Router>
