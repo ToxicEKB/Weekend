@@ -6,6 +6,8 @@ module.exports = {
       backgroundImage: (theme) => ({
         "category": "url('components/Category/images/main/categoryBg.svg')",
         "footer": "url('components/footer/footerImg/Rectangle_397.svg')",
+        "tagsOrange": "url('components/Tags/images/bgOrange.svg')",
+        "tagsBlue": "url('components/Tags/images/bgBlue.svg')",
       }),
       textColor: (theme) => ({
         Sea: "#00CCA9",
