@@ -20,7 +20,7 @@ const postData = async (url, data) => {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(...data),
+        body: JSON.stringify(data),
     })
 
     const result = await response.json()
@@ -42,7 +42,17 @@ export const getSubCategoriesFull = (arrIds) => {
     )
 }
 
-export const postOrder = (data) => {
-    console.log(data)
-    // postData(`${baseUrl}/api/invoices`, data)
+export const postOrder = async (data) => {
+    const query = {
+        name: data.name,
+        status: "new",
+        phone: data.phone,
+        date: data.date,
+        persons: data.persons,
+        email: data.email,
+        description: data.parents,
+    }
+
+    const result = await postData(`${baseUrl}/api/invoices`, query)
+    return result
 }

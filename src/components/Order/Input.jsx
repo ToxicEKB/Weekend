@@ -12,8 +12,7 @@ const placeholderDict = {
     },
     date: {
         placeholder: "Например: 19.03.2021 в 14:00",
-        error: "Например: 19.03.2021 в 14:00",
-        type: "text",
+        type: "date",
     },
     address: {
         placeholder: "Введите адрес",

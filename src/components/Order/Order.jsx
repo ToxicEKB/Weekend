@@ -1,19 +1,18 @@
 import React, { useState } from "react"
 import "./style.css"
-import IconCheckbox from "./icons/IconCheckbox.js"
 import { useForm } from "react-hook-form"
 import Input from "./Input"
+import IconCheckbox from "./icons/IconCheckbox.js"
 
 const Order = (props) => {
     const { postOrder, data } = props
     const { register, handleSubmit, errors, trigger } = useForm()
+    const [checked, setChecked] = useState(false)
 
     const onSubmit = (newData) => {
-        console.log(newData)
         postOrder(newData)
     }
 
-    const [checked, setChecked] = useState(false)
     const handleCheck = () => {
         setChecked(!checked)
     }
