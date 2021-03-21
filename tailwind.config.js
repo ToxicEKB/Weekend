@@ -14,6 +14,7 @@ module.exports = {
         Crimson: "#BD467F",
         Gray: "#979797",
         DarkGreen: "#00ad90",
+        BlackGray: "#212121"
       }),
       backgroundColor: (theme) => ({
         Sea: "#00CCA9",
