@@ -3,7 +3,7 @@ import RectLeftWhite from "./images/main/RectLeftWhite";
 import RectRightWhite from "./images/main/RectRightWhite";
 import CategoryItem from "./CategoryItem";
 
-const Category = ({ category }) => {
+const Category = ({ category, filterCat }) => {
   if (!category) return null;
   const { name, services } = category;
 
@@ -18,9 +18,12 @@ const Category = ({ category }) => {
             <RectRightWhite/>
           </div>
           <div className="flex flex-wrap justify-between">
-            {services.map((item, idx) => (
-              <CategoryItem item={item} key={idx}/>
-            ))}
+            {filterCat
+              ? services
+                  .filter((item) => item.desc === item.desc && item.SubcategoryId === filterCat)
+                  .map((item, idx) => <CategoryItem item={item} key={idx} />)
+              : services.map((item, idx) => <CategoryItem item={item} key={idx} />) 
+            }
           </div>
         </div>
       </div>
