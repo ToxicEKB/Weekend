@@ -8,11 +8,11 @@ const Tags = () => {
       <div className="mb-6 flex justify-center items-center">
         <RectLeft />
         <h2 className="mx-10 text-Gray text-xl font-semibold tracking-wide">
-          Готовые сеты
+          Лучшие подборки
         </h2>
         <RectRight />
       </div>
-      <TagBlock title="Лучшие подборки" cat={1} />
+      <TagBlock title="Популярные" cat={1} />
       <TagBlock title="Развитие навыков" cat={2} />
       <TagBlock title="Локация" cat={3} />
     </div>
