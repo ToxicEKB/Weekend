@@ -1,8 +1,8 @@
 import React from "react";
-import { useState } from "react";
 import SubCategories from "../components/SubCategories";
 import Category from "../components/Category/Category";
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 import { useQuery } from "react-query";
 import {
   getCategoryById, getServices,
