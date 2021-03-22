@@ -3,13 +3,14 @@ import RectLeftWhite from "./images/main/RectLeftWhite";
 import RectRightWhite from "./images/main/RectRightWhite";
 import CategoryItem from "./CategoryItem";
 
-const Category = ({ category, filterCat }) => {
+const Category = ({ category, filteredCategory, toggle }) => {
   if (!category) return null;
   const { name, services } = category;
+  console.log("filteredCategory:", filteredCategory);
 
   return (
     <div className="w-95 md:w-full xl:w-full mx-auto flex flex-col text-center -mb-2.5">
-      <div className="bg-category sm:bg-Sea bg-no-repeat bg-cover bg-center">
+      <div className="bg-category bg-no-repeat bg-cover bg-center">
         <div className="flex flex-wrap justify-center flex-col p-4">
           <div className="flex justify-center items-center w-60 mb-5 mx-auto mt-4">
             <RectLeftWhite/>
@@ -18,12 +19,11 @@ const Category = ({ category, filterCat }) => {
             <RectRightWhite/>
           </div>
           <div className="flex flex-wrap justify-between">
-            {filterCat
-              ? services
-                  .filter((item) => item.desc === item.desc && item.SubcategoryId === filterCat)
-                  .map((item, idx) => <CategoryItem item={item} key={idx} />)
-              : services.map((item, idx) => <CategoryItem item={item} key={idx} />) 
-            }
+            {toggle ? filteredCategory.map((item, idx) => (
+              <CategoryItem item={item} key={idx}/>
+            )) : services?.map((item, idx) => (
+              <CategoryItem item={item} key={idx}/>
+            ))}
           </div>
         </div>
       </div>

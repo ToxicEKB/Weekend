@@ -1,21 +1,14 @@
 import SubCatItem from "./SubCatItem";
 
-const SubCategories = ({ subCategories, setFilterCat, toggleFilter }) => {
+const SubCategories = ({ subCategories, filterSubCategories }) => {
 
   return (
-    <div className="px-3 mb-5 max-w-sm mx-auto flex justify-between">
+    <div className="px-4 mb-5 max-w-sm mx-auto flex justify-between">
       {subCategories?.map((item, idx) => {
-          return (
-            // item.desc === subCategories.desc && (
-              <SubCatItem
-                key={idx}
-                item={item}
-                setFilterCat={setFilterCat}
-                toggleFilter={toggleFilter}
-              />
-            // )
-          );
-        })}
+        return (
+          <SubCatItem item={item} key={idx} onClick={() => filterSubCategories(item)}/>
+        );
+      })}
     </div>
   );
 };

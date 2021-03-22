@@ -4,10 +4,15 @@ import Category from "../components/Category/Category";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { useQuery } from "react-query";
-import { getCategoryById, getSubCategoriesFull } from "../helpers/requests";
+import {
+  getCategoryById, getServices,
+  getSubCategoriesFull,
+} from "../helpers/requests";
 
 const CategoryPage = () => {
   const { id } = useParams();
+  const [filteredCategory, setFilteredCategory] = useState(null);
+  const [toggle, setToggle] = useState(false);
 
   const { data: category } = useQuery(["category", id], () => getCategoryById(id));
 
@@ -16,7 +21,14 @@ const CategoryPage = () => {
   const { data: subCategories } = useQuery("subCategoriesFull", () => getSubCategoriesFull(subCategoriesIds),
     { enabled: !!subCategoriesIds });
 
-  console.log(subCategories);
+  const { data: services } = useQuery("services", () => getServices());
+
+  const filterForSubCategory = (item) => {
+    const filtered = services.filter((el) => el.SubcategoryId === item.id);
+    setToggle(!toggle);
+    setFilteredCategory(filtered);
+    console.log("filtered:", filtered);
+  };
 
   const [filterCat, setFilterCat] = useState(0);
   const toggleFilter = (SubcategoryId) => {
@@ -25,8 +37,8 @@ const CategoryPage = () => {
 
   return (
     <>
-      <SubCategories subCategories={subCategories} setFilterCat={setFilterCat} toggleFilter={toggleFilter}/>
-      <Category category={category} filterCat={filterCat}/>
+      <SubCategories subCategories={subCategories} filterSubCategories={filterForSubCategory}/>
+      <Category category={category} filteredCategory={filteredCategory} toggle={toggle}/>
     </>
   );
 };
