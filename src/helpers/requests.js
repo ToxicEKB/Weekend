@@ -18,3 +18,4 @@ export const getSubCategoriesFull = (arrIds) => {
     return await getSubCategoryById(itemId);
   }));
 };
+export const getServices = () => getData(`${baseUrl}/api/services`);
