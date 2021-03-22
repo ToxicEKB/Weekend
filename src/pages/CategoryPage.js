@@ -30,11 +30,6 @@ const CategoryPage = () => {
     console.log("filtered:", filtered);
   };
 
-  const [filterCat, setFilterCat] = useState(0);
-  const toggleFilter = (SubcategoryId) => {
-    if (filterCat === SubcategoryId) return setFilterCat(0);
-  }
-
   return (
     <>
       <SubCategories subCategories={subCategories} filterSubCategories={filterForSubCategory}/>
