@@ -1,9 +1,7 @@
 import React from "react"
 import IconCloseButton from "./icons/IconCloseButton"
 
-const Modal = (props) => {
-    const { active, setActive, message } = props
-
+const Modal = ({ active, setActive, message }) => {
     const handleSetActive = () => {
         setActive(!active)
     }
@@ -31,4 +29,4 @@ const Modal = (props) => {
     )
 }
 
-export default Modal
+export default React.memo(Modal)

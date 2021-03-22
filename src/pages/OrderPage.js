@@ -4,19 +4,8 @@ import { postOrder } from "../helpers/requests"
 import Order from "../components/Order/Order"
 import Modal from "../components/Order/Modal"
 
-const initialState = {
-    name: "",
-    phone: null,
-    address: "",
-    date: "",
-    persons: null,
-    email: "",
-    parents: null,
-}
-
 const OrderPage = () => {
     const history = useHistory()
-    const [data, setData] = useState(initialState)
     const [response, setResponse] = useState({})
     const [active, setActive] = useState(false)
     const [message, setMessage] = useState("")
@@ -42,11 +31,10 @@ const OrderPage = () => {
 
     const handlePostOrder = useCallback(
         async (newData) => {
-            setData(initialState)
             const result = await postOrder(newData)
             setResponse(result)
         },
-        [data]
+        [response]
     )
 
     const hadleSetActiveMolal = useCallback(
@@ -58,12 +46,7 @@ const OrderPage = () => {
 
     return (
         <>
-            <Order
-                postOrder={handlePostOrder}
-                data={data}
-                response={response}
-                history={history}
-            />
+            <Order postOrder={handlePostOrder} />
             <Modal
                 active={active}
                 setActive={hadleSetActiveMolal}
