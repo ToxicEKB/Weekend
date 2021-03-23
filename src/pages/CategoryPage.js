@@ -13,6 +13,7 @@ const CategoryPage = () => {
   const { id } = useParams();
   const [filteredCategory, setFilteredCategory] = useState(null);
   const [toggle, setToggle] = useState(false);
+  const [subCatId, setSubCatId] = useState(null);
 
   const { data: category } = useQuery(["category", id], () => getCategoryById(id));
 
@@ -25,9 +26,9 @@ const CategoryPage = () => {
 
   const filterForSubCategory = (item) => {
     const filtered = services.filter((el) => el.SubcategoryId === item.id);
-    setToggle(!toggle);
     setFilteredCategory(filtered);
-    console.log("filtered:", filtered);
+    setSubCatId(item.id);
+    subCatId === item.id ? setToggle(!toggle) : setToggle(true);
   };
 
   return (
