@@ -13,6 +13,7 @@ import Collaboration from "./components/collaboration/Collaboration.js";
 import Contacts from "./components/contacts/Contacts.js";
 import OrderPage from "./pages/OrderPage";
 import Favorites from "./components/Favorites/Favorites.js";
+import Header from "./components/header/Header.js";
 import Footer from "./components/footer/Footer.js";
 import logo from "./images/logo.png";
 import { CookiesProvider } from 'react-cookie';
@@ -24,12 +25,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <React.StrictMode>
         <Router>
-          <div className="mb-3 flex items-center border">
-            <Link to="/">
-              <img src={logo} alt="logo" className="justify-self-start" style={{ width: 159 }}/>
-            </Link>
-            <h3 className="m-auto">Здесь будет хэдэр</h3>
-          </div>
+          <Header/>
           <Switch>
             <Route exact path="/" component={MainPage}/>
             <Route path="/categories/:id" component={CategoryPage}/>
